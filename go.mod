@@ -2,7 +2,10 @@ module github.com/go-by-value/pointless
 
 go 1.25.0
 
-require golang.org/x/tools v0.49.0
+require (
+	github.com/golangci/plugin-module-register v0.1.2
+	golang.org/x/tools v0.49.0
+)
 
 require (
 	golang.org/x/mod v0.39.0 // indirect
