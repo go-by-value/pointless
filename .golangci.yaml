@@ -1,0 +1,54 @@
+version: "2"
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/go-by-value/pointless
+  exclusions:
+    paths:
+      - testdata
+
+linters:
+  default: standard
+  enable:
+    - copyloopvar
+    - errorlint
+    - exhaustive
+    - gocritic
+    - godot
+    - gosec
+    - misspell
+    - nolintlint
+    - paralleltest
+    - perfsprint
+    - prealloc
+    - revive
+    - thelper
+    - unconvert
+    - unparam
+    - usestdlibvars
+    - usetesting
+    - wastedassign
+  settings:
+    exhaustive:
+      default-signifies-exhaustive: true
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment
+    misspell:
+      locale: US
+  exclusions:
+    presets:
+      - common-false-positives
+      - std-error-handling
+    paths:
+      - testdata
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
